@@ -30,8 +30,9 @@ export default class Form extends React.Component {
         const { step } = this.state;
         this.setState({ step: step + 1 });
 
-        if (step == (this.props.questions1.length + this.props.sepiQuestions.length + 1))
+        if (step == (this.props.questions1.length + this.props.sepiQuestions.length + 1)) {
             this.callApi();
+        }
     }
     //move to previous question/page of the form by decreasing the step variable
     prevStep = () => {

@@ -183,14 +183,14 @@ export default class Result extends React.Component {
         //summera alltihop
         sum = age * gender * hairSkinFreck * selfCancer * famCancer * lever * sepi;
 
-        console.log("age= " + age);
-        console.log("gender= " + gender);
-        console.log("hairSkinFreck= " + hairSkinFreck);
-        console.log("selfCancer= " + selfCancer);
-        console.log("famCancer= " + famCancer);
-        console.log("lever= " + lever);
-        console.log("sepi= " + sepi);
-        console.log("sum= " + sum);
+        //console.log("age= " + age);
+        //console.log("gender= " + gender);
+        //console.log("hairSkinFreck= " + hairSkinFreck);
+        //console.log("selfCancer= " + selfCancer);
+        //console.log("famCancer= " + famCancer);
+        //console.log("lever= " + lever);
+        //console.log("sepi= " + sepi);
+        //console.log("sum= " + sum);
 
         return sum;
     }

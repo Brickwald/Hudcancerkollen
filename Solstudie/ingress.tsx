@@ -19,7 +19,6 @@ export default class Ingress extends React.Component {
 
     continue = async e => {
         e.preventDefault();
-        console.log(this.props.code);
         this.setState({ codeErrorTextColor: "black" });
         this.setState({ codeErrorText: "Vänligen vänta" });
         var codeIsCorrect = await this.checkSurveyCode(this.props.code);
@@ -30,7 +29,6 @@ export default class Ingress extends React.Component {
         }
         else
         {
-            console.log("-----------FEEEEEEEEEEEEEEEEEEL-----------------------------");
             this.setState({ codeErrorTextColor: "red" });
             this.setState({ codeErrorText: "Ej godkänd studiekod"});
         }
@@ -48,7 +46,6 @@ export default class Ingress extends React.Component {
             return false;
         });
         //return true if it is accepted
-        console.log("res= " + Object.values(res)[0]);
         return Object.values(res)[0];
     }
 
