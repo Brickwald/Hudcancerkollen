@@ -320,7 +320,6 @@ var Form = /** @class */ (function (_super) {
             _this.setState({ step: step + 1 });
             if (step == (_this.props.questions1.length + _this.props.sepiQuestions.length + 1)) {
                 _this.callApi();
-                console.log("results have been snet to server");
             }
         };
         //move to previous question/page of the form by decreasing the step variable
@@ -494,7 +493,6 @@ var Ingress = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         e.preventDefault();
-                        console.log(this.props.code);
                         this.setState({ codeErrorTextColor: "black" });
                         this.setState({ codeErrorText: "Vänligen vänta" });
                         return [4 /*yield*/, this.checkSurveyCode(this.props.code)];
@@ -526,7 +524,6 @@ var Ingress = /** @class */ (function (_super) {
                     case 1:
                         res = _a.sent();
                         //return true if it is accepted
-                        console.log("res= " + Object.values(res)[0]);
                         return [2 /*return*/, Object.values(res)[0]];
                 }
             });
@@ -33245,14 +33242,14 @@ var Result = /** @class */ (function (_super) {
         }
         //summera alltihop
         sum = age * gender * hairSkinFreck * selfCancer * famCancer * lever * sepi;
-        console.log("age= " + age);
-        console.log("gender= " + gender);
-        console.log("hairSkinFreck= " + hairSkinFreck);
-        console.log("selfCancer= " + selfCancer);
-        console.log("famCancer= " + famCancer);
-        console.log("lever= " + lever);
-        console.log("sepi= " + sepi);
-        console.log("sum= " + sum);
+        //console.log("age= " + age);
+        //console.log("gender= " + gender);
+        //console.log("hairSkinFreck= " + hairSkinFreck);
+        //console.log("selfCancer= " + selfCancer);
+        //console.log("famCancer= " + famCancer);
+        //console.log("lever= " + lever);
+        //console.log("sepi= " + sepi);
+        //console.log("sum= " + sum);
         return sum;
     };
     Result.prototype.render = function () {
