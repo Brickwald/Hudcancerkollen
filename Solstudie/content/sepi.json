@@ -1,0 +1,98 @@
+﻿[
+  {
+    "text": "Vid soligt sommarväder, hur ofta brukar du sola med avsikt att bli brun?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Aldrig",
+      "Sällan",
+      "Ibland",
+      "Ofta",
+      "Nästan dagligen"
+    ],
+    "feedback": "Minska ditt solande."
+  },
+  {
+    "text": "Hur många gånger uppskattar du att du blivit solbränd i form av solsveda och rödbrändhet under det senaste året?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Ingen gång",
+      "1-2 gånger",
+      "3-5 gånger",
+      "6-10 gånger",
+      "Fler än 10 gånger"
+    ],
+    "feedback": "Undvika att bränna dig i solen så att huden blir röd."
+  },
+  {
+    "text": "Hur lång tid uppskattar du att du brukar vistas i solen ( i genomsnitt), mellan kl. 11 - 15, en vanlig, ledig dag under sommaren?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "< 30 minuter",
+      "30 minuter - 1 timme",
+      "1-2 timmar",
+      "2-3 timmar",
+      "> 3 timmar"
+    ],
+    "feedback": "Undvika att vara direkt i solen när den är som starkast på dagen."
+  },
+  {
+    "text": "Hur ofta brukar du resa utomlands till länder med stark sol (till exempel med charterresor)?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Aldrig",
+      "Sällan",
+      "1-2 veckor per år",
+      "3-5 veckor per år",
+      "> 5 veckor per år"
+    ],
+    "feedback": "Vara extra noga med att skydda dig mot stark sol när du åker utomlands till länder med stark sol."
+  },
+  {
+    "text": "När du vistas i stark sol, hur ofta använder du solskyddsmedel?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Alltid",
+      "Ofta",
+      "Ibland",
+      "Sällan",
+      "Aldrig"
+    ],
+    "feedback": "Vara mer frikostig med att använda solskyddsmedel när du är i solen."
+  },
+  {
+    "text": "När du vistas i stark sol, hur ofta använder du dig av täckande kläder i avsikt att skydda dig mot solen?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Alltid",
+      "Ofta",
+      "Ibland",
+      "Sällan",
+      "Aldrig"
+    ],
+    "feedback": "Oftare ha på dig täckande kläder när du vistas i stark sol."
+  },
+  {
+    "text": "När du vistas i stark sol, hur ofta använder du någon huvudbonad (hatt, keps el. dyl.) för att skydda dig mot solen?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Alltid",
+      "Ofta",
+      "Ibland",
+      "Sällan",
+      "Aldrig"
+    ],
+    "feedback": "Oftare ha något på huvudet såsom solhatt eller keps när du vistas i stark sol."
+  },
+  {
+    "text": "Vid soligt sommarväder, hur ofta försöker du skydda dig mot solen genom att hålla dig inomhus eller i skuggan?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Alltid",
+      "Ofta",
+      "Ibland",
+      "Sällan",
+      "Aldrig"
+    ],
+    "feedback": "Oftare försöka hålla dig i skuggan när solen är som starkast."
+  }
+]

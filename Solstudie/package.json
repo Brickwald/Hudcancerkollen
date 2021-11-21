@@ -1,0 +1,28 @@
+{
+  "name": "solstudie",
+  "version": "0.0.0",
+  "description": "Solstudie",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "express": "~4.17.1",
+    "path": "~0.12.7",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "ts-loader": "~7.0.1",
+    "typescript": "~3.8.3",
+    "webpack": "~4.42.1",
+    "webpack-cli": "~3.3.11",
+    "webpack-encoding-plugin": "^0.3.1"
+  },
+  "scripts": {
+    "build": "webpack-cli app.tsx --config webpack-config.js",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
