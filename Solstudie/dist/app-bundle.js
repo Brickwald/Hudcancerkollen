@@ -196,8 +196,8 @@ var Main = /** @class */ (function (_super) {
             React.createElement("div", { style: determineStyle() },
                 React.createElement("div", { style: headerStyle },
                     React.createElement("div", { style: innerStyle },
-                        React.createElement("img", { src: "/content/hudcancerkollen_logga.png", alt: "Hudcancerkollen", style: logoStyle }),
-                        React.createElement("img", { src: "/content/LiU_primar_svart.png", alt: "LiU", style: logoStyle }))),
+                        React.createElement("img", { src: "./content/hudcancerkollen_logga.png", alt: "Hudcancerkollen", style: logoStyle }),
+                        React.createElement("img", { src: "./content/LiU_primar_svart.png", alt: "LiU", style: logoStyle }))),
                 React.createElement("div", { style: formPadding },
                     React.createElement(form_1.default, { questions1: questions1, sepiQuestions: sepiQuestions })))));
     };
@@ -212,7 +212,7 @@ var containerAppStyle = {
     flexDirection: "column",
 };
 var headerStyle = {
-    backgroundImage: "url('/content/background_image.png')",
+    backgroundImage: "url('./content/background_image.png')",
     backgroundRepeat: "no-repeat",
     //backgroundAttachment: "fixed",
     backgroundSize: "cover",

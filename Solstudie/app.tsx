@@ -16,8 +16,8 @@ export class Main extends React.Component {
                 <div style={determineStyle()}>
                     <div style={headerStyle}>
                         <div style={innerStyle}>
-                            <img src="/content/hudcancerkollen_logga.png" alt="Hudcancerkollen" style={logoStyle}></img>
-                            <img src="/content/LiU_primar_svart.png" alt="LiU" style={logoStyle}></img>
+                            <img src="./content/hudcancerkollen_logga.png" alt="Hudcancerkollen" style={logoStyle}></img>
+                            <img src="./content/LiU_primar_svart.png" alt="LiU" style={logoStyle}></img>
                         </div>
                     </div>
                     <div style={formPadding}>
@@ -38,7 +38,7 @@ const containerAppStyle = {
     //backgroundColor: "blue",
 }
 const headerStyle = {
-    backgroundImage: "url('/content/background_image.png')",
+    backgroundImage: "url('./content/background_image.png')",
     backgroundRepeat: "no-repeat",
     //backgroundAttachment: "fixed",
     backgroundSize: "cover",
