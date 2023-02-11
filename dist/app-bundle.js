@@ -180,6 +180,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Main = void 0;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var form_1 = __webpack_require__(/*! ./form */ "./form.tsx");
@@ -640,22 +641,42 @@ var Level1 = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Level1.prototype.render = function () {
-        if (this.props.risk < 132) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "J\u00E4mf\u00F6rt med de flesta individer i Sverige \u00E4r din risk att drabbas av melanom (hudcancer) f\u00F6rh\u00E5llandevis l\u00E5g.")));
+        return (React.createElement("div", null,
+            React.createElement("p", null, "Eftersom det h\u00E4r \u00E4r en testversion av Hudcancerkollen f\u00E5r du i den versionen ingen \u00E5terkoppling kring hur din sammanv\u00E4gda hudcancerrisk ser ut i j\u00E4mf\u00F6relse med andra, utan enbart vilka specifika riskfaktorer du har.")));
+        /* Detta visar olika beroende på risk
+        if (this.props.risk < 132)
+        {
+            return (
+                <div>
+                    <p>Jämfört med de flesta individer i Sverige är din risk att drabbas av melanom (hudcancer) förhållandevis låg.</p>
+                </div>
+            );
         }
-        else if (this.props.risk < 660) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "Du har en m\u00E5ttlig risk att i framtiden drabbas av melanom (hudcancer), ungef\u00E4r i niv\u00E5 med genomsnittet i befolkningen.")));
+        else if (this.props.risk < 660)
+        {
+            return (
+                <div>
+                    <p>Du har en måttlig risk att i framtiden drabbas av melanom (hudcancer), ungefär i nivå med genomsnittet i befolkningen.</p>
+                </div>
+            );
         }
-        else if (this.props.risk < 1188) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "J\u00E4mf\u00F6rt med snittet har du en n\u00E5got f\u00F6rh\u00F6jd risk att i framtiden drabbas av melanom (hudcancer).")));
+        else if (this.props.risk < 1188)
+        {
+            return (
+                <div>
+                    <p>Jämfört med snittet har du en något förhöjd risk att i framtiden drabbas av melanom (hudcancer).</p>
+                </div>
+            );
         }
-        else if (this.props.risk >= 1188) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "J\u00E4mf\u00F6rt med de flesta har du en ordentligt f\u00F6rh\u00F6jd risk att i framtiden drabbas av melanom (hudcancer).")));
+        else if (this.props.risk >= 1188)
+        {
+            return (
+                <div>
+                    <p>Jämfört med de flesta har du en ordentligt förhöjd risk att i framtiden drabbas av melanom (hudcancer).</p>
+                </div>
+            );
         }
+        */
     };
     return Level1;
 }(React.Component));
