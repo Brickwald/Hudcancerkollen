@@ -32,6 +32,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="admin\index.html" />
     <Content Include="content\background_image.png" />
     <Content Include="content\hudcancerkollen_logga.png" />
     <Content Include="content\LiU_primar_svart.png" />
@@ -95,6 +96,7 @@
     </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="admin\" />
     <Folder Include="dist\" />
     <Folder Include="content\" />
   </ItemGroup>
