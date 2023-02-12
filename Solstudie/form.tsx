@@ -8,6 +8,7 @@ const axios = require('axios');
 import Ingress from './ingress';
 import NumQuestion from './question';
 import AltQuestion from './altQuestion';
+import TextQuestion from './textQuestion';
 import Komun from './komun';
 import Result from './result';
 
@@ -64,16 +65,18 @@ export default class Form extends React.Component {
     callApi = () => {
 
         const res = axios.get('https://hudcancerkollen-test.azurewebsites.net/api/PostAnswers', {
+        //const res = axios.get('http://localhost:7071/api/PostAnswers', {
             params: {
                 surveycode: this.state.surveyCode,
-                q1: this.state.answers1[0],
-                q2: this.state.answers1[1],
-                q3: this.state.answers1[2],
-                q4: this.state.answers1[3],
-                q5: this.state.answers1[4],
-                q6: this.state.answers1[5],
-                q7: this.state.answers1[6],
-                q8: this.state.answers1[7],
+                individualcode: this.state.answers1[0],
+                q1: this.state.answers1[1],
+                q2: this.state.answers1[2],
+                q3: this.state.answers1[3],
+                q4: this.state.answers1[4],
+                q5: this.state.answers1[5],
+                q6: this.state.answers1[6],
+                q7: this.state.answers1[7],
+                q8: this.state.answers1[8],
                 sepi1: this.state.answersSepi[0],
                 sepi2: this.state.answersSepi[1],
                 sepi3: this.state.answersSepi[2],
@@ -81,7 +84,19 @@ export default class Form extends React.Component {
                 sepi5: this.state.answersSepi[4],
                 sepi6: this.state.answersSepi[5],
                 sepi7: this.state.answersSepi[6],
-                sepi8: this.state.answersSepi[7],
+                sepi8: this.state.answersSepi[7],   //TODO: fixa de sista bitarna
+                totalrisk: 0,
+                sus1: 0,
+                sus2: 0,
+                sus3: 0,
+                sus4: 0,
+                sus5: 0,
+                sus6: 0,
+                sus7: 0,
+                sus8: 0,
+                sus9: 0,
+                sus10: 0,
+                kontakt: "testkontakt",
             }
         });
     }
@@ -101,6 +116,19 @@ export default class Form extends React.Component {
             {
                 return (
                     <NumQuestion
+                        step={step}
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        handleChange={this.handleChange}
+                        object={this.props.questions1[step - 1]}
+                        answer={this.state.answers1[step - 1]}
+                    />
+                );
+            }
+            else if (this.props.questions1[step - 1].answer_type == "text_input")
+            {
+                return (
+                    <TextQuestion
                         step={step}
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}

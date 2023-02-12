@@ -255,10 +255,10 @@ ReactDOM.render(React.createElement(Main, null), document.getElementById('root')
 /*!*********************************!*\
   !*** ./content/questions1.json ***!
   \*********************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, default */
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"text\":\"Vilken är din ålder?\",\"answer_type\":\"number_input\"},{\"text\":\"Vilket kön tillhör du?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Kvinna\",\"Man\",\"Annat/inget\",\"Vill ej uppge\"]},{\"text\":\"Vilken är din hudtyp? Ange vilket av följande påståenden som bäst stämmer överens med hur din hud reagerar när du vistats i solen:\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Jag har lätt för att bli röd, men blir sällan eller aldrig brun.\",\"Jag har lätt för att bli röd, men jag kan ibland också bli lite brun.\",\"Det kan ibland hända att jag blir röd, men jag blir alltid brun.\",\"Jag blir aldrig röd, men har lätt för att bli brun.\",\"Min hud är en aning brun för jämnan, och när jag är i solen blir jag mörkare brun men aldrig röd.\",\"Min hud är för jämnan väldigt mörkt brun eller svart.\"]},{\"text\":\"Vilken är din naturliga hårfärg? Ange den som ligger närmast av nedanstående:\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Svart\",\"Brun\",\"Blond\",\"Röd\"]},{\"text\":\"Har du fräknar?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja\"]},{\"text\":\"Har du själv haft någon form av hudcancer?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja, malignt melanom\",\"Ja, men inte malignt melanom (basaliom/basalcellscancer eller skivepitelcancer)\",\"Ja, men vet inte vilken sort\",\"Osäker/Vet inte\"]},{\"text\":\"Har någon/några av dina biologiska föräldrar eller syskon drabbats av malignt melanom?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja, en förälder eller ett syskon\",\"Ja, antingen båda föräldrarna, en förälder och minst ett syskon, eller fler än ett syskon\",\"Osäker/Vet ej\"]},{\"text\":\"Titta efter på dina båda underarmar och räkna hur många leverfläckar (oavsett storlek) du har på dem tillsammans\",\"answer_type\":\"number_input\"}]");
+module.exports = JSON.parse("[{\"text\":\"Skriv in din personliga kod:\",\"answer_type\":\"text_input\"},{\"text\":\"Vilken är din ålder?\",\"answer_type\":\"number_input\"},{\"text\":\"Vilket kön tillhör du?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Kvinna\",\"Man\",\"Annat/inget\",\"Vill ej uppge\"]},{\"text\":\"Vilken är din hudtyp? Ange vilket av följande påståenden som bäst stämmer överens med hur din hud reagerar när du vistats i solen:\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Jag har lätt för att bli röd, men blir sällan eller aldrig brun.\",\"Jag har lätt för att bli röd, men jag kan ibland också bli lite brun.\",\"Det kan ibland hända att jag blir röd, men jag blir alltid brun.\",\"Jag blir aldrig röd, men har lätt för att bli brun.\",\"Min hud är en aning brun för jämnan, och när jag är i solen blir jag mörkare brun men aldrig röd.\",\"Min hud är för jämnan väldigt mörkt brun eller svart.\"]},{\"text\":\"Vilken är din naturliga hårfärg? Ange den som ligger närmast av nedanstående:\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Svart\",\"Brun\",\"Blond\",\"Röd\"]},{\"text\":\"Har du fräknar?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja\"]},{\"text\":\"Har du själv haft någon form av hudcancer?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja, malignt melanom\",\"Ja, men inte malignt melanom (basaliom/basalcellscancer eller skivepitelcancer)\",\"Ja, men vet inte vilken sort\",\"Osäker/Vet inte\"]},{\"text\":\"Har någon/några av dina biologiska föräldrar eller syskon drabbats av malignt melanom?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja, en förälder eller ett syskon\",\"Ja, antingen båda föräldrarna, en förälder och minst ett syskon, eller fler än ett syskon\",\"Osäker/Vet ej\"]},{\"text\":\"Titta efter på dina båda underarmar och räkna hur många leverfläckar (oavsett storlek) du har på dem tillsammans\",\"answer_type\":\"number_input\"}]");
 
 /***/ }),
 
@@ -309,6 +309,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 var ingress_1 = __webpack_require__(/*! ./ingress */ "./ingress.tsx");
 var question_1 = __webpack_require__(/*! ./question */ "./question.tsx");
 var altQuestion_1 = __webpack_require__(/*! ./altQuestion */ "./altQuestion.tsx");
+var textQuestion_1 = __webpack_require__(/*! ./textQuestion */ "./textQuestion.tsx");
 var komun_1 = __webpack_require__(/*! ./komun */ "./komun.tsx");
 var result_1 = __webpack_require__(/*! ./result */ "./result.tsx");
 var Form = /** @class */ (function (_super) {
@@ -350,16 +351,18 @@ var Form = /** @class */ (function (_super) {
         }; };
         _this.callApi = function () {
             var res = axios.get('https://hudcancerkollen-test.azurewebsites.net/api/PostAnswers', {
+                //const res = axios.get('http://localhost:7071/api/PostAnswers', {
                 params: {
                     surveycode: _this.state.surveyCode,
-                    q1: _this.state.answers1[0],
-                    q2: _this.state.answers1[1],
-                    q3: _this.state.answers1[2],
-                    q4: _this.state.answers1[3],
-                    q5: _this.state.answers1[4],
-                    q6: _this.state.answers1[5],
-                    q7: _this.state.answers1[6],
-                    q8: _this.state.answers1[7],
+                    individualcode: _this.state.answers1[0],
+                    q1: _this.state.answers1[1],
+                    q2: _this.state.answers1[2],
+                    q3: _this.state.answers1[3],
+                    q4: _this.state.answers1[4],
+                    q5: _this.state.answers1[5],
+                    q6: _this.state.answers1[6],
+                    q7: _this.state.answers1[7],
+                    q8: _this.state.answers1[8],
                     sepi1: _this.state.answersSepi[0],
                     sepi2: _this.state.answersSepi[1],
                     sepi3: _this.state.answersSepi[2],
@@ -368,6 +371,18 @@ var Form = /** @class */ (function (_super) {
                     sepi6: _this.state.answersSepi[5],
                     sepi7: _this.state.answersSepi[6],
                     sepi8: _this.state.answersSepi[7],
+                    totalrisk: 0,
+                    sus1: 0,
+                    sus2: 0,
+                    sus3: 0,
+                    sus4: 0,
+                    sus5: 0,
+                    sus6: 0,
+                    sus7: 0,
+                    sus8: 0,
+                    sus9: 0,
+                    sus10: 0,
+                    kontakt: "testkontakt",
                 }
             });
         };
@@ -392,6 +407,9 @@ var Form = /** @class */ (function (_super) {
          {
             if (this.props.questions1[step - 1].answer_type == "number_input") {
                 return (React.createElement(question_1.default, { step: step, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChange, object: this.props.questions1[step - 1], answer: this.state.answers1[step - 1] }));
+            }
+            else if (this.props.questions1[step - 1].answer_type == "text_input") {
+                return (React.createElement(textQuestion_1.default, { step: step, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChange, object: this.props.questions1[step - 1], answer: this.state.answers1[step - 1] }));
             }
             else if (this.props.questions1[step - 1].answer_type == "alternatives") {
                 return (React.createElement(altQuestion_1.default, { step: step, qIndex: step - 1, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChange, object: this.props.questions1[step - 1], answer: this.state.answers1[step - 1] }));
@@ -33287,6 +33305,78 @@ var Result = /** @class */ (function (_super) {
     return Result;
 }(React.Component));
 exports.default = Result;
+
+
+/***/ }),
+
+/***/ "./textQuestion.tsx":
+/*!**************************!*\
+  !*** ./textQuestion.tsx ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var TextQuestion = /** @class */ (function (_super) {
+    __extends(TextQuestion, _super);
+    function TextQuestion(props) {
+        var _this = _super.call(this, props) || this;
+        _this.continue = function (e) {
+            e.preventDefault();
+            _this.props.nextStep();
+        };
+        _this.back = function (e) {
+            e.preventDefault();
+            _this.props.prevStep();
+        };
+        _this.checkEnterPress = function (e) {
+            if (e.key == 'Enter') {
+                if (_this.props.answer != "" && _this.props.answer != null && _this.props.answer !== undefined) {
+                    _this.continue(e);
+                }
+            }
+        };
+        _this.inputRef = React.createRef();
+        return _this;
+    }
+    TextQuestion.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement("h2", null,
+                "Fr\u00E5ga ",
+                this.props.step),
+            React.createElement("div", { style: questionStyle },
+                React.createElement("p", null, this.props.object.text)),
+            React.createElement("div", { style: inputStyle },
+                React.createElement("input", { type: "text", ref: this.inputRef, onChange: this.props.handleChange(this.props.step - 1), value: this.props.answer, onKeyPress: this.checkEnterPress })),
+            React.createElement("button", { type: "button", onClick: this.back }, "Tillbaka"),
+            React.createElement("button", { type: "button", onClick: this.continue, disabled: this.props.answer == "" || this.props.answer == null }, "N\u00E4sta")));
+    };
+    return TextQuestion;
+}(React.Component));
+exports.default = TextQuestion;
+var inputStyle = {
+    minHeight: "200px",
+};
+var questionStyle = {
+    minHeight: "50px",
+};
 
 
 /***/ })

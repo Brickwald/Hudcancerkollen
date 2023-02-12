@@ -39,6 +39,7 @@
     <Content Include="content\questions1.json">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="content\SUS.json" />
     <Content Include="dist\app-bundle.js" />
     <Content Include="dist\app-bundle.js.map" />
     <Content Include="index.html">
@@ -95,6 +96,7 @@
     <TypeScriptCompile Include="result.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="textQuestion.tsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\" />

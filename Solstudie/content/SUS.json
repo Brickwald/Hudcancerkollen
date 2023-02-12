@@ -1,9 +1,5 @@
 ﻿[
   {
-    "text": "Skriv in din personliga kod:",
-    "answer_type": "text_input"
-  },
-  {
     "text": "Vilken är din ålder?",
     "answer_type": "number_input"
   },
