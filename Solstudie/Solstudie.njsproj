@@ -61,6 +61,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="admin.tsx" />
     <TypeScriptCompile Include="altQuestion.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>

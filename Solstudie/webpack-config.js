@@ -2,10 +2,13 @@ const EncodingPlugin = require('webpack-encoding-plugin');
 
 module.exports = {
     devtool: 'source-map',
-    entry: "./app.tsx",
+    entry: {
+        app: "./app.tsx",
+        admin: "./admin.tsx",
+    },
     mode: "development",
     output: {
-        filename: "./app-bundle.js"
+        filename: "./[name]-bundle.js"
     },
     plugins: [new EncodingPlugin({
         encoding: 'utf8'
