@@ -1,72 +1,112 @@
 ﻿[
   {
-    "text": "Vilken är din ålder?",
-    "answer_type": "number_input"
-  },
-  {
-    "text": "Vilket kön tillhör du?",
+    "text": "Om det fanns tillgängligt tror jag att jag skulle vilja använda riskskattningsinstrumentet fler gånger.",
     "answer_type": "alternatives",
     "alternatives": [
-      "Kvinna",
-      "Man",
-      "Annat/inget",
-      "Vill ej uppge"
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
     ]
   },
   {
-    "text": "Vilken är din hudtyp? Ange vilket av följande påståenden som bäst stämmer överens med hur din hud reagerar när du vistats i solen:",
+    "text": "Jag tycker att instrumentet är onödigt komplicerat.",
     "answer_type": "alternatives",
     "alternatives": [
-      "Jag har lätt för att bli röd, men blir sällan eller aldrig brun.",
-      "Jag har lätt för att bli röd, men jag kan ibland också bli lite brun.",
-      "Det kan ibland hända att jag blir röd, men jag blir alltid brun.",
-      "Jag blir aldrig röd, men har lätt för att bli brun.",
-      "Min hud är en aning brun för jämnan, och när jag är i solen blir jag mörkare brun men aldrig röd.",
-      "Min hud är för jämnan väldigt mörkt brun eller svart."
-
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
     ]
   },
   {
-    "text": "Vilken är din naturliga hårfärg? Ange den som ligger närmast av nedanstående:",
+    "text": "Jag tycker att instrumentet är lätt att använda.",
     "answer_type": "alternatives",
     "alternatives": [
-      "Svart",
-      "Brun",
-      "Blond",
-      "Röd"
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
     ]
   },
   {
-    "text": "Har du fräknar?",
+    "text": "Jag tror att jag skulle behöva stöd av någon kunnig person för att förstå hur man använder instrumentet.",
     "answer_type": "alternatives",
     "alternatives": [
-      "Nej",
-      "Ja"
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
     ]
   },
   {
-    "text": "Har du själv haft någon form av hudcancer?",
+    "text": "Jag tycker att de olika delarna av instrumentet hänger väl ihop med varandra.",
     "answer_type": "alternatives",
     "alternatives": [
-      "Nej",
-      "Ja, malignt melanom",
-      "Ja, men inte malignt melanom (basaliom/basalcellscancer eller skivepitelcancer)",
-      "Ja, men vet inte vilken sort",
-      "Osäker/Vet inte"
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
     ]
   },
   {
-    "text": "Har någon/några av dina biologiska föräldrar eller syskon drabbats av malignt melanom?",
+    "text": "Jag tycker att många av delarna i instrumentet känns inkonsekventa.",
     "answer_type": "alternatives",
     "alternatives": [
-      "Nej",
-      "Ja, en förälder eller ett syskon",
-      "Ja, antingen båda föräldrarna, en förälder och minst ett syskon, eller fler än ett syskon",
-      "Osäker/Vet ej"
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
     ]
   },
   {
-    "text": "Titta efter på dina båda underarmar och räkna hur många leverfläckar (oavsett storlek) du har på dem tillsammans",
-    "answer_type": "number_input"
+    "text": "Jag tror att de flesta snabbt skulle förstå hur man använder instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tycker att instrumentet var svårt att använda.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag känner mig trygg i att använda instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag skulle behöva lära mig mycket för att kunna använda och förstå nyttan med instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
   }
 ]

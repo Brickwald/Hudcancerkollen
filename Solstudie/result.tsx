@@ -10,6 +10,13 @@ import Level4 from './level4';
 
 export default class Result extends React.Component {
 
+    constructor(props) {
+        super(props);
+        var risk = this.calculateResult();
+        this.setRisk(risk);
+        this.state = {risk: risk};
+    }
+
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
@@ -29,11 +36,11 @@ export default class Result extends React.Component {
         //q1
         var age = 0.0;
 
-        if (answers1[0] < 40)
+        if (answers1[1] < 40)
         {
             age = 1.0;
         }
-        else if (answers1[0] > 60)
+        else if (answers1[1] > 60)
         {
             age = 3.0;
         }
@@ -46,7 +53,7 @@ export default class Result extends React.Component {
         //q2
         var gender = 1.0;
 
-        if (answers1[1] == 1)    //om man
+        if (answers1[2] == 1)    //om man
             gender = 1.1;
 
         //Hudtyp * hårfärg * fräknar (max 2.0)
@@ -56,7 +63,7 @@ export default class Result extends React.Component {
         var skin = 0.0;
         var freck = 0.0;
 
-        switch (Number(answers1[2])) {
+        switch (Number(answers1[3])) {
             case 0:
                 skin = 1.6;
                 break;
@@ -77,7 +84,7 @@ export default class Result extends React.Component {
                 break;
         }
 
-        switch (Number(answers1[3])) {
+        switch (Number(answers1[4])) {
             case 0:
                 hair = 1.0;
                 break;
@@ -92,7 +99,7 @@ export default class Result extends React.Component {
                 break;
         }
 
-        switch (Number(answers1[4])) {
+        switch (Number(answers1[5])) {
             case 0:
                 freck = 1.0;
                 break;
@@ -108,7 +115,7 @@ export default class Result extends React.Component {
         //q6
         var selfCancer = 0.0;
 
-        switch (Number(answers1[5])) {
+        switch (Number(answers1[6])) {
             case 0:
                 selfCancer = 1.0;
                 break;
@@ -129,7 +136,7 @@ export default class Result extends React.Component {
         //q7
         var famCancer = 0.0;
 
-        switch (Number(answers1[6])) {
+        switch (Number(answers1[7])) {
             case 0:
                 famCancer = 1.0;
                 break;
@@ -148,13 +155,13 @@ export default class Result extends React.Component {
         //q8
         var lever = 0.0;
 
-        if (answers1[7] < 5) {
+        if (answers1[8] < 5) {
             lever = 1.0;
         }
-        else if (answers1[7] >= 10) {
+        else if (answers1[8] >= 10) {
             lever = 5.0;
         }
-        else  // 5 <= answers[0] < 10
+        else  // 5 <= answers[8] < 10
         {
             lever = 3.0;
         }
@@ -195,11 +202,14 @@ export default class Result extends React.Component {
         return sum;
     }
 
+    setRisk(risk) {
+        this.props.setRisk(risk);
+    }
+
     render() {
         const { answers1 } = this.props;
         const { answersSepi } = this.props;
-
-        var risk = this.calculateResult();
+        const { risk } = this.state;
 
         return (
             <div>
@@ -238,12 +248,12 @@ export default class Result extends React.Component {
                 {/*Nivå 3: Återkoppling SEPI*/}
                 <Level3 risk={risk} sepiQuestions={this.props.sepiQuestions} answersSepi={answersSepi}/>
                 {/*Nivå 4: Leverfläckar*/}
-                <Level4 antal={answers1[7]} />
+                <Level4 antal={answers1[8]} />
 
                 
                 {/*Knappar*/}
-                {/*<button type="button" onClick={this.back}>Tillbaka</button>
-                <button type="button" onClick={this.continue}>Skicka in resultat</button>*/}
+                {/*<button type="button" onClick={this.back}>Tillbaka</button>*/}
+                <button type="button" onClick={this.continue}>Fortsätt</button>
             </div>
         );
     }

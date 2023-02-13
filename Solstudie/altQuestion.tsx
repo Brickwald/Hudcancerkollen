@@ -20,8 +20,8 @@ export default class AltQuestion extends React.Component {
         const { answer } = this.props;
         return (
             <div>
-                <h2>Fråga {this.props.step}</h2>
-
+                {/* <h2>Fråga {this.props.step}</h2> */}
+                
                 {/*Text*/}
                 <div style={questionStyle}>
                     <p>{this.props.object.text}</p>
