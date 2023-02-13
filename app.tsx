@@ -8,6 +8,7 @@ import Form from './form';
 //read Json files with questions
 const questions1 = require('./content/questions1.json');
 const sepiQuestions = require('./content/sepi.json');
+const susQuestions = require("./content/SUS.json");
 
 export class Main extends React.Component {
     render() {
@@ -21,7 +22,7 @@ export class Main extends React.Component {
                         </div>
                     </div>
                     <div style={formPadding}>
-                        <Form questions1={questions1} sepiQuestions={sepiQuestions} />
+                        <Form questions1={questions1} sepiQuestions={sepiQuestions} susQuestions={susQuestions} />
                     </div>
                 </div>
             </div>

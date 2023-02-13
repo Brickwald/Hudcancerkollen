@@ -1,0 +1,112 @@
+﻿[
+  {
+    "text": "Om det fanns tillgängligt tror jag att jag skulle vilja använda riskskattningsinstrumentet fler gånger.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tycker att instrumentet är onödigt komplicerat.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tycker att instrumentet är lätt att använda.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tror att jag skulle behöva stöd av någon kunnig person för att förstå hur man använder instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tycker att de olika delarna av instrumentet hänger väl ihop med varandra.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tycker att många av delarna i instrumentet känns inkonsekventa.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tror att de flesta snabbt skulle förstå hur man använder instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag tycker att instrumentet var svårt att använda.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag känner mig trygg i att använda instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  },
+  {
+    "text": "Jag skulle behöva lära mig mycket för att kunna använda och förstå nyttan med instrumentet.",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "1: Instämmer inte alls med påståendet",
+      "2",
+      "3",
+      "4",
+      "5: Instämmer helt med påståendet"
+    ]
+  }
+]

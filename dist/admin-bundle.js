@@ -81,483 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./app.tsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./admin.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./altQuestion.tsx":
-/*!*************************!*\
-  !*** ./altQuestion.tsx ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var AltQuestion = /** @class */ (function (_super) {
-    __extends(AltQuestion, _super);
-    function AltQuestion() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.continue = function (e) {
-            e.preventDefault();
-            _this.props.nextStep();
-        };
-        _this.back = function (e) {
-            e.preventDefault();
-            _this.props.prevStep();
-        };
-        return _this;
-    }
-    AltQuestion.prototype.render = function () {
-        var answer = this.props.answer;
-        return (React.createElement("div", null,
-            React.createElement("div", { style: questionStyle },
-                React.createElement("p", null, this.props.object.text)),
-            React.createElement("div", { onChange: this.props.handleChange(this.props.qIndex), style: inputStyle }, this.props.object.alternatives.map(function (data, index) {
-                return (React.createElement("div", null,
-                    React.createElement("input", { type: "radio", value: index, id: index, name: "alt", checked: index == answer }),
-                    React.createElement("label", { for: index },
-                        " ",
-                        data,
-                        " ")));
-            })),
-            React.createElement("button", { type: "button", onClick: this.back }, "Tillbaka"),
-            React.createElement("button", { type: "button", onClick: this.continue, disabled: this.props.answer == null }, "N\u00E4sta")));
-    };
-    return AltQuestion;
-}(React.Component));
-exports.default = AltQuestion;
-var inputStyle = {
-    minHeight: "200px",
-};
-var questionStyle = {
-    minHeight: "50px",
-};
-
-
-/***/ }),
-
-/***/ "./app.tsx":
-/*!*****************!*\
-  !*** ./app.tsx ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Main = void 0;
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var form_1 = __webpack_require__(/*! ./form */ "./form.tsx");
-//read Json files with questions
-var questions1 = __webpack_require__(/*! ./content/questions1.json */ "./content/questions1.json");
-var sepiQuestions = __webpack_require__(/*! ./content/sepi.json */ "./content/sepi.json");
-var susQuestions = __webpack_require__(/*! ./content/SUS.json */ "./content/SUS.json");
-var Main = /** @class */ (function (_super) {
-    __extends(Main, _super);
-    function Main() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Main.prototype.render = function () {
-        return (React.createElement("div", { style: containerAppStyle },
-            React.createElement("div", { style: determineStyle() },
-                React.createElement("div", { style: headerStyle },
-                    React.createElement("div", { style: innerStyle },
-                        React.createElement("img", { src: "./content/hudcancerkollen_logga.png", alt: "Hudcancerkollen", style: logoStyle }),
-                        React.createElement("img", { src: "./content/LiU_primar_svart.png", alt: "LiU", style: logoStyle }))),
-                React.createElement("div", { style: formPadding },
-                    React.createElement(form_1.default, { questions1: questions1, sepiQuestions: sepiQuestions, susQuestions: susQuestions })))));
-    };
-    return Main;
-}(React.Component));
-exports.Main = Main;
-var containerAppStyle = {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-};
-var headerStyle = {
-    backgroundImage: "url('./content/background_image.png')",
-    backgroundRepeat: "no-repeat",
-    //backgroundAttachment: "fixed",
-    backgroundSize: "cover",
-    width: "100%",
-};
-var innerStyle = {
-    paddingBottom: "calc(55% - (50% * 0.67))"
-};
-var logoStyle = {
-    width: "50%",
-    verticalAlign: "top"
-};
-var formPadding = {
-    padding: "3%"
-};
-var appStyleLarge = {
-    width: "600px",
-    backgroundColor: "#F5F5F5",
-    //height: "100%"
-    flexGrow: "1",
-    boxSizing: "border-box",
-};
-var appStyleSmall = {
-    width: "100%",
-    backgroundColor: "#F5F5F5",
-    flexGrow: "1",
-    boxSizing: "border-box",
-};
-//används för att ändra utseende beroende på skärmens bredd
-var determineStyle = function () {
-    return (window.innerWidth > 600 ? appStyleLarge : appStyleSmall);
-};
-ReactDOM.render(React.createElement(Main, null), document.getElementById('root'));
-
-
-/***/ }),
-
-/***/ "./content/SUS.json":
-/*!**************************!*\
-  !*** ./content/SUS.json ***!
-  \**************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"text\":\"Om det fanns tillgängligt tror jag att jag skulle vilja använda riskskattningsinstrumentet fler gånger.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tycker att instrumentet är onödigt komplicerat.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tycker att instrumentet är lätt att använda.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tror att jag skulle behöva stöd av någon kunnig person för att förstå hur man använder instrumentet.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tycker att de olika delarna av instrumentet hänger väl ihop med varandra.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tycker att många av delarna i instrumentet känns inkonsekventa.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tror att de flesta snabbt skulle förstå hur man använder instrumentet.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag tycker att instrumentet var svårt att använda.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag känner mig trygg i att använda instrumentet.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]},{\"text\":\"Jag skulle behöva lära mig mycket för att kunna använda och förstå nyttan med instrumentet.\",\"answer_type\":\"alternatives\",\"alternatives\":[\"1: Instämmer inte alls med påståendet\",\"2\",\"3\",\"4\",\"5: Instämmer helt med påståendet\"]}]");
-
-/***/ }),
-
-/***/ "./content/questions1.json":
-/*!*********************************!*\
-  !*** ./content/questions1.json ***!
-  \*********************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"text\":\"Skriv in din personliga kod:\",\"answer_type\":\"text_input\"},{\"text\":\"Vilken är din ålder?\",\"answer_type\":\"number_input\"},{\"text\":\"Vilket kön tillhör du?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Kvinna\",\"Man\",\"Annat/inget\",\"Vill ej uppge\"]},{\"text\":\"Vilken är din hudtyp? Ange vilket av följande påståenden som bäst stämmer överens med hur din hud reagerar när du vistats i solen:\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Jag har lätt för att bli röd, men blir sällan eller aldrig brun.\",\"Jag har lätt för att bli röd, men jag kan ibland också bli lite brun.\",\"Det kan ibland hända att jag blir röd, men jag blir alltid brun.\",\"Jag blir aldrig röd, men har lätt för att bli brun.\",\"Min hud är en aning brun för jämnan, och när jag är i solen blir jag mörkare brun men aldrig röd.\",\"Min hud är för jämnan väldigt mörkt brun eller svart.\"]},{\"text\":\"Vilken är din naturliga hårfärg? Ange den som ligger närmast av nedanstående:\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Svart\",\"Brun\",\"Blond\",\"Röd\"]},{\"text\":\"Har du fräknar?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja\"]},{\"text\":\"Har du själv haft någon form av hudcancer?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja, malignt melanom\",\"Ja, men inte malignt melanom (basaliom/basalcellscancer eller skivepitelcancer)\",\"Ja, men vet inte vilken sort\",\"Osäker/Vet inte\"]},{\"text\":\"Har någon/några av dina biologiska föräldrar eller syskon drabbats av malignt melanom?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Nej\",\"Ja, en förälder eller ett syskon\",\"Ja, antingen båda föräldrarna, en förälder och minst ett syskon, eller fler än ett syskon\",\"Osäker/Vet ej\"]},{\"text\":\"Titta efter på dina båda underarmar och räkna hur många leverfläckar (oavsett storlek) du har på dem tillsammans\",\"answer_type\":\"number_input\"}]");
-
-/***/ }),
-
-/***/ "./content/sepi.json":
-/*!***************************!*\
-  !*** ./content/sepi.json ***!
-  \***************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"text\":\"Vid soligt sommarväder, hur ofta brukar du sola med avsikt att bli brun?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Aldrig\",\"Sällan\",\"Ibland\",\"Ofta\",\"Nästan dagligen\"],\"feedback\":\"Minska ditt solande.\"},{\"text\":\"Hur många gånger uppskattar du att du blivit solbränd i form av solsveda och rödbrändhet under det senaste året?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Ingen gång\",\"1-2 gånger\",\"3-5 gånger\",\"6-10 gånger\",\"Fler än 10 gånger\"],\"feedback\":\"Undvika att bränna dig i solen så att huden blir röd.\"},{\"text\":\"Hur lång tid uppskattar du att du brukar vistas i solen ( i genomsnitt), mellan kl. 11 - 15, en vanlig, ledig dag under sommaren?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"< 30 minuter\",\"30 minuter - 1 timme\",\"1-2 timmar\",\"2-3 timmar\",\"> 3 timmar\"],\"feedback\":\"Undvika att vara direkt i solen när den är som starkast på dagen.\"},{\"text\":\"Hur ofta brukar du resa utomlands till länder med stark sol (till exempel med charterresor)?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Aldrig\",\"Sällan\",\"1-2 veckor per år\",\"3-5 veckor per år\",\"> 5 veckor per år\"],\"feedback\":\"Vara extra noga med att skydda dig mot stark sol när du åker utomlands till länder med stark sol.\"},{\"text\":\"När du vistas i stark sol, hur ofta använder du solskyddsmedel?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Alltid\",\"Ofta\",\"Ibland\",\"Sällan\",\"Aldrig\"],\"feedback\":\"Vara mer frikostig med att använda solskyddsmedel när du är i solen.\"},{\"text\":\"När du vistas i stark sol, hur ofta använder du dig av täckande kläder i avsikt att skydda dig mot solen?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Alltid\",\"Ofta\",\"Ibland\",\"Sällan\",\"Aldrig\"],\"feedback\":\"Oftare ha på dig täckande kläder när du vistas i stark sol.\"},{\"text\":\"När du vistas i stark sol, hur ofta använder du någon huvudbonad (hatt, keps el. dyl.) för att skydda dig mot solen?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Alltid\",\"Ofta\",\"Ibland\",\"Sällan\",\"Aldrig\"],\"feedback\":\"Oftare ha något på huvudet såsom solhatt eller keps när du vistas i stark sol.\"},{\"text\":\"Vid soligt sommarväder, hur ofta försöker du skydda dig mot solen genom att hålla dig inomhus eller i skuggan?\",\"answer_type\":\"alternatives\",\"alternatives\":[\"Alltid\",\"Ofta\",\"Ibland\",\"Sällan\",\"Aldrig\"],\"feedback\":\"Oftare försöka hålla dig i skuggan när solen är som starkast.\"}]");
-
-/***/ }),
-
-/***/ "./form.tsx":
-/*!******************!*\
-  !*** ./form.tsx ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-var ingress_1 = __webpack_require__(/*! ./ingress */ "./ingress.tsx");
-var question_1 = __webpack_require__(/*! ./question */ "./question.tsx");
-var altQuestion_1 = __webpack_require__(/*! ./altQuestion */ "./altQuestion.tsx");
-var textQuestion_1 = __webpack_require__(/*! ./textQuestion */ "./textQuestion.tsx");
-var result_1 = __webpack_require__(/*! ./result */ "./result.tsx");
-var Form = /** @class */ (function (_super) {
-    __extends(Form, _super);
-    function Form(props) {
-        var _this = _super.call(this, props) || this;
-        //move to next question/page of the form by increasing the step variable
-        _this.nextStep = function () {
-            var step = _this.state.step;
-            var surveyCode = _this.state.surveyCode;
-            // hantera sol2-fallet
-            if (surveyCode == "sol2" && step == (_this.props.questions1.length + _this.props.sepiQuestions.length + _this.props.susQuestions.length + 1)) {
-                _this.setState({ step: step + 2 });
-                _this.callApi();
-                return;
-            }
-            // normalfallet
-            _this.setState({ step: step + 1 });
-            if (step == (_this.props.questions1.length + _this.props.sepiQuestions.length + _this.props.susQuestions.length + 2)) {
-                // skicka in svar
-                _this.callApi();
-            }
-        };
-        //move to previous question/page of the form by decreasing the step variable
-        _this.prevStep = function () {
-            var step = _this.state.step;
-            _this.setState({ step: step - 1 });
-        };
-        //Handle field change
-        _this.handleChange = function (index) { return function (e) {
-            // 1. Make a shallow copy of array
-            var array = __spreadArrays(_this.state.answers1);
-            // 2. insert value into copied array
-            array[index] = e.target.value;
-            // 3. replace old array
-            _this.setState({ answers1: array });
-        }; };
-        _this.handleChangeSEPI = function (index) { return function (e) {
-            // 1. Make a shallow copy of array
-            var array = __spreadArrays(_this.state.answersSepi);
-            // 2. insert value into copied array
-            array[index] = e.target.value;
-            // 3. replace old array
-            _this.setState({ answersSepi: array });
-        }; };
-        _this.handleChangeSUS = function (index) { return function (e) {
-            // 1. Make a shallow copy of array
-            var array = __spreadArrays(_this.state.answersSus);
-            // 2. insert value into copied array
-            array[index] = e.target.value;
-            // 3. replace old array
-            _this.setState({ answersSus: array });
-        }; };
-        _this.handleSurveyCode = function () { return function (e) {
-            _this.setState({ surveyCode: e.target.value });
-        }; };
-        _this.setTotalRisk = function (risk) {
-            _this.setState({ totalRisk: risk });
-        };
-        _this.contactOptionChange = function (event) {
-            var contactOption = event.target.value;
-            _this.setState({ contactOption: contactOption });
-            var resultingContact = "";
-            if (contactOption == "email") {
-                resultingContact = "Email: " + _this.emailInputRef.current.value;
-            }
-            else if (contactOption == "sms") {
-                resultingContact = "SMS: " + _this.smsInputRef.current.value;
-            }
-            else if (contactOption == "snailMail") {
-                resultingContact = "Postadress: " + _this.snailMailInputRef.current.value;
-            }
-            _this.setState({ kontakt: resultingContact });
-        };
-        _this.emailInputChanged = function (e) {
-            var contactOption = _this.state.contactOption;
-            if (contactOption == "email") {
-                var resultingContact = "Email: " + _this.emailInputRef.current.value;
-                _this.setState({ kontakt: resultingContact });
-            }
-        };
-        _this.smsInputChanged = function (e) {
-            var contactOption = _this.state.contactOption;
-            if (contactOption == "sms") {
-                var resultingContact = "SMS: " + _this.smsInputRef.current.value;
-                _this.setState({ kontakt: resultingContact });
-            }
-        };
-        _this.snailMailInputChanged = function (e) {
-            var contactOption = _this.state.contactOption;
-            if (contactOption == "snailMail") {
-                var resultingContact = "Postadress: " + _this.snailMailInputRef.current.value;
-                _this.setState({ kontakt: resultingContact });
-            }
-        };
-        _this.setKontakt = function (kont) {
-            _this.setState({ kontakt: kont });
-        };
-        _this.callApi = function () {
-            var res = axios.get('https://hudcancerkollen-test.azurewebsites.net/api/PostAnswers', {
-                //const res = axios.get('http://localhost:7071/api/PostAnswers', {
-                params: {
-                    surveycode: _this.state.surveyCode,
-                    individualcode: _this.state.answers1[0],
-                    q1: _this.state.answers1[1],
-                    q2: _this.state.answers1[2],
-                    q3: _this.state.answers1[3],
-                    q4: _this.state.answers1[4],
-                    q5: _this.state.answers1[5],
-                    q6: _this.state.answers1[6],
-                    q7: _this.state.answers1[7],
-                    q8: _this.state.answers1[8],
-                    sepi1: _this.state.answersSepi[0],
-                    sepi2: _this.state.answersSepi[1],
-                    sepi3: _this.state.answersSepi[2],
-                    sepi4: _this.state.answersSepi[3],
-                    sepi5: _this.state.answersSepi[4],
-                    sepi6: _this.state.answersSepi[5],
-                    sepi7: _this.state.answersSepi[6],
-                    sepi8: _this.state.answersSepi[7],
-                    totalrisk: _this.state.totalRisk,
-                    sus1: _this.state.answersSus[0],
-                    sus2: _this.state.answersSus[1],
-                    sus3: _this.state.answersSus[2],
-                    sus4: _this.state.answersSus[3],
-                    sus5: _this.state.answersSus[4],
-                    sus6: _this.state.answersSus[5],
-                    sus7: _this.state.answersSus[6],
-                    sus8: _this.state.answersSus[7],
-                    sus9: _this.state.answersSus[8],
-                    sus10: _this.state.answersSus[9],
-                    kontakt: _this.state.kontakt,
-                }
-            });
-        };
-        _this.emailInputRef = React.createRef();
-        _this.smsInputRef = React.createRef();
-        _this.snailMailInputRef = React.createRef();
-        _this.state = {
-            step: 0,
-            answers1: Array.apply(null, Array(props.questions1.length)),
-            answersSepi: Array.apply(null, Array(props.sepiQuestions.length)),
-            surveyCode: "",
-            correctCode: false,
-            totalRisk: 0,
-            answersSus: Array.apply(null, Array(props.susQuestions.length)),
-            contactOption: "",
-            kontakt: "",
-            test: 0
-        };
-        return _this;
-    }
-    Form.prototype.render = function () {
-        var step = this.state.step;
-        var answers1 = this.state.answers1;
-        var resultStep = this.props.questions1.length + this.props.sepiQuestions.length + 1;
-        if (step == 0) //Ingress
-         {
-            return (React.createElement(ingress_1.default, { nextStep: this.nextStep, handleChange: this.handleSurveyCode, code: this.state.surveyCode }));
-        }
-        else if (step > 0 && step <= this.props.questions1.length) //Questions1
-         {
-            if (this.props.questions1[step - 1].answer_type == "number_input") {
-                return (React.createElement(question_1.default, { step: step, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChange, object: this.props.questions1[step - 1], answer: this.state.answers1[step - 1] }));
-            }
-            else if (this.props.questions1[step - 1].answer_type == "text_input") {
-                return (React.createElement(textQuestion_1.default, { step: step, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChange, object: this.props.questions1[step - 1], answer: this.state.answers1[step - 1] }));
-            }
-            else if (this.props.questions1[step - 1].answer_type == "alternatives") {
-                return (React.createElement("div", null,
-                    React.createElement("h2", null,
-                        "Fr\u00E5ga ",
-                        step),
-                    React.createElement(altQuestion_1.default, { step: step, qIndex: step - 1, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChange, object: this.props.questions1[step - 1], answer: this.state.answers1[step - 1] })));
-            }
-        }
-        else if (step > this.props.questions1.length && step <= (this.props.questions1.length + this.props.sepiQuestions.length)) //SEPI
-         {
-            var indexSEPI = step - this.props.questions1.length - 1;
-            return (React.createElement("div", null,
-                React.createElement("h2", null,
-                    "Fr\u00E5ga ",
-                    step),
-                React.createElement(altQuestion_1.default, { step: step, qIndex: indexSEPI, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChangeSEPI, object: this.props.sepiQuestions[indexSEPI], answer: this.state.answersSepi[indexSEPI] })));
-        }
-        else if (step == resultStep) //result
-         {
-            return (React.createElement(result_1.default, { step: step, nextStep: this.nextStep, prevStep: this.prevStep, questions1: this.props.questions1, sepiQuestions: this.props.sepiQuestions, answers1: this.state.answers1, answersSepi: this.state.answersSepi, setRisk: this.setTotalRisk }));
-        }
-        else if (step > resultStep && step <= (resultStep + this.props.susQuestions.length)) //SUS
-         {
-            var indexSUS = step - resultStep - 1;
-            return (React.createElement("div", null,
-                React.createElement("h2", null,
-                    "Utv\u00E4rdering ",
-                    indexSUS + 1),
-                React.createElement("p", null,
-                    "Nu n\u00E4r du har testat Hudcancerkollen vill vi g\u00E4rna veta din \u00E5sikt om hur tyckte den var att anv\u00E4nda och f\u00F6rst\u00E5, med hj\u00E4lp av 10 korta p\u00E5st\u00E5enden som du ska ange i vilken grad du inst\u00E4mmer med p\u00E5st\u00E5endet eller inte.",
-                    React.createElement("br", null),
-                    " Ange hur v\u00E4l du inst\u00E4mmer med f\u00F6ljande p\u00E5st\u00E5ende:"),
-                React.createElement(altQuestion_1.default, { step: step, qIndex: indexSUS, nextStep: this.nextStep, prevStep: this.prevStep, handleChange: this.handleChangeSUS, object: this.props.susQuestions[indexSUS], answer: this.state.answersSus[indexSUS] })));
-        }
-        else if (step == (resultStep + this.props.susQuestions.length) + 1) //kontaktformulär
-         {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "Det var sista fr\u00E5gan. Om 2 veckor vill vi att du anv\u00E4nder Hudcancerkollen en g\u00E5ng till, f\u00F6r att kunna v\u00E4rdera instrumentets samst\u00E4mmighet \u00F6ver tid. Ange hur du vill bli kontaktad f\u00F6r en p\u00E5minnelse om att g\u00F6ra det:"),
-                React.createElement("div", null,
-                    React.createElement("div", { className: "radio" },
-                        React.createElement("label", null,
-                            React.createElement("input", { type: "radio", value: "email", checked: this.state.contactOption === "email", onChange: this.contactOptionChange }),
-                            "Via e-post, adress:"),
-                        React.createElement("input", { type: "text", ref: this.emailInputRef, onChange: this.emailInputChanged })),
-                    React.createElement("div", { className: "radio" },
-                        React.createElement("label", null,
-                            React.createElement("input", { type: "radio", value: "sms", checked: this.state.contactOption === "sms", onChange: this.contactOptionChange }),
-                            "Via sms, tel.nr:"),
-                        React.createElement("input", { type: "text", ref: this.smsInputRef, onChange: this.smsInputChanged })),
-                    React.createElement("div", { className: "radio" },
-                        React.createElement("label", null,
-                            React.createElement("input", { type: "radio", value: "snailMail", checked: this.state.contactOption === "snailMail", onChange: this.contactOptionChange }),
-                            "Med vanlig post, postadress:"),
-                        React.createElement("input", { type: "text", ref: this.snailMailInputRef, onChange: this.snailMailInputChanged }))),
-                React.createElement("button", { type: "button", onClick: this.nextStep, disabled: this.state.contactOption == null || this.state.contactOption == "" }, "Skicka in")));
-        }
-        else if (step == (resultStep + this.props.susQuestions.length) + 2) // Tack för medverkan
-         {
-            return (React.createElement("p", null, "Tack f\u00F6r din medverkan i studien! Du kan nu st\u00E4nga ner sidan."));
-        }
-    };
-    return Form;
-}(React.Component));
-exports.default = Form;
-
-
-/***/ }),
-
-/***/ "./ingress.tsx":
-/*!*********************!*\
-  !*** ./ingress.tsx ***!
-  \*********************/
+/***/ "./admin.tsx":
+/*!*******************!*\
+  !*** ./admin.tsx ***!
+  \*******************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -613,45 +145,48 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Main = void 0;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-var Ingress = /** @class */ (function (_super) {
-    __extends(Ingress, _super);
-    function Ingress(props) {
+var Main = /** @class */ (function (_super) {
+    __extends(Main, _super);
+    function Main(props) {
         var _this = _super.call(this, props) || this;
-        _this.continue = function (e) { return __awaiter(_this, void 0, void 0, function () {
-            var codeIsCorrect;
+        _this.loginPressed = function (e) { return __awaiter(_this, void 0, void 0, function () {
+            var username, password, codeIsCorrect;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         e.preventDefault();
                         this.setState({ codeErrorTextColor: "black" });
                         this.setState({ codeErrorText: "Vänligen vänta" });
-                        return [4 /*yield*/, this.checkSurveyCode(this.props.code)];
+                        username = this.state.username;
+                        password = this.state.password;
+                        return [4 /*yield*/, this.checkLogin(username, password)];
                     case 1:
                         codeIsCorrect = _a.sent();
                         if (codeIsCorrect) {
-                            this.props.nextStep();
+                            this.setState({ correctLogin: true });
                         }
                         else {
+                            this.setState({ correctLogin: false });
                             this.setState({ codeErrorTextColor: "red" });
-                            this.setState({ codeErrorText: "Ej godkänd studiekod" });
+                            this.setState({ codeErrorText: "Fel användarnamn eller lösenord" });
                         }
                         return [2 /*return*/];
                 }
             });
         }); };
-        _this.checkSurveyCode = function (theCode) { return __awaiter(_this, void 0, void 0, function () {
+        _this.checkLogin = function (username, password) { return __awaiter(_this, void 0, void 0, function () {
             var res;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, axios.get('https://hudcancerkollen-test.azurewebsites.net/api/CheckSurveyCode', {
-                            params: {
-                                surveycode: theCode,
-                            }
+                    case 0: return [4 /*yield*/, axios.post('https://hudcancerkollen-test.azurewebsites.net/api/CheckAdminLogin', {
+                            username: username,
+                            password: password,
                         }).catch(function (error) {
-                            //console.log(error.response);
+                            console.log(error.response);
                             return false;
                         })];
                     case 1:
@@ -661,312 +196,122 @@ var Ingress = /** @class */ (function (_super) {
                 }
             });
         }); };
-        _this.checkEnterPress = function (e) {
+        _this.getAnswersPressed = function (e) { return __awaiter(_this, void 0, void 0, function () {
+            var username, password, studiekod, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        e.preventDefault();
+                        username = this.state.username;
+                        password = this.state.password;
+                        studiekod = this.state.studiekod;
+                        this.setState({ getAnswersErrorTextColor: "black" });
+                        this.setState({ getAnswersErrorText: "Hämtar data. Vänligen vänta" });
+                        return [4 /*yield*/, this.getExcelFile(studiekod, username, password)];
+                    case 1:
+                        res = _a.sent();
+                        if (res) {
+                            this.setState({ getAnswersErrorTextColor: "green" });
+                            this.setState({ getAnswersErrorText: "Lyckat! Du borde fått en excelfil nedladdad." });
+                        }
+                        else {
+                            this.setState({ getAnswersErrorTextColor: "red" });
+                            this.setState({ getAnswersErrorText: "Fel: Kunde inte hämta datan." });
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        _this.getExcelFile = function (surveycode, username, password) { return __awaiter(_this, void 0, void 0, function () {
+            var res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, axios.post('https://hudcancerkollen-test.azurewebsites.net/api/GetAnswers', {
+                            // Body
+                            surveycode: surveycode,
+                            username: username,
+                            password: password,
+                        }, {
+                            // config
+                            responseType: 'blob',
+                        }).then(function (response) {
+                            // create file link in browser's memory
+                            var href = URL.createObjectURL(response.data);
+                            // create "a" HTML element with href to file & click
+                            var link = document.createElement('a');
+                            link.href = href;
+                            link.setAttribute('download', 'hudcancerkollenSvar.xlsx'); //or any other extension
+                            document.body.appendChild(link);
+                            link.click();
+                            // clean up "a" element & remove ObjectURL
+                            document.body.removeChild(link);
+                            URL.revokeObjectURL(href);
+                            return true;
+                        }).catch(function (error) {
+                            //console.log(error.response);
+                            return false;
+                        })];
+                    case 1:
+                        res = _a.sent();
+                        //return true if it is accepted
+                        return [2 /*return*/, true];
+                }
+            });
+        }); };
+        _this.checkLoginEnterPress = function (e) {
             if (e.key == 'Enter') {
-                _this.continue(e);
+                _this.loginPressed(e);
             }
         };
+        _this.handleUsernameChanged = function () { return function (e) {
+            _this.setState({ username: e.target.value });
+        }; };
+        _this.handlePasswordChanged = function () { return function (e) {
+            _this.setState({ password: e.target.value });
+        }; };
+        _this.handleSurveyCodeChanged = function () { return function (e) {
+            _this.setState({ studiekod: e.target.value });
+        }; };
         _this.state = {
+            correctLogin: false,
+            username: "",
+            password: "",
             codeErrorText: "",
             codeErrorTextColor: "black",
+            getAnswersErrorText: "",
+            getAnswersErrorTextColor: "black",
+            studiekod: "",
         };
-        _this.inputRef = React.createRef();
+        _this.inputUsernameRef = React.createRef();
+        _this.inputPasswordRef = React.createRef();
+        _this.inputSurveyCodeRef = React.createRef();
         return _this;
     }
-    Ingress.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("p", null, "Bland cancersjukdomar i Sverige \u00E4r hudcancer den cancer som \u00F6kar mest, och har gjort s\u00E5 i flera decennier. Malignt melanom, den allvarligaste formen av hudcancer, \u00E4r idag den femte vanligaste cancerformen, och drabbar \u00E5rligen n\u00E4rmare 5000 personer."),
-            React.createElement("p", null, "Risken att drabbas av hudcancer beror p\u00E5 en kombination av individuella faktorer och hur mycket skadlig (ultraviolett) str\u00E5lning fr\u00E5n solen man uts\u00E4tter sig f\u00F6r. Riskerna med att vistas i stark sol \u00F6kar till exempel om man \u00E4r v\u00E4ldigt ljushyad, har m\u00E5nga leverfl\u00E4ckar p\u00E5 kroppen och om man dessutom har en f\u00F6r\u00E4lder eller syskon som har drabbats av malignt melanom (\u00E4rftlighet). Ju h\u00F6gre individuell riskprofil du har, desto f\u00F6rsiktigare i solen b\u00F6r du vara f\u00F6r att minska din risk att i framtiden drabbas av hudcancer."),
-            React.createElement("p", null, "Med Hudcancerkollen kan du sj\u00E4lv skatta din risk och fundera \u00F6ver om det finns anledning f\u00F6r dig att p\u00E5 olika s\u00E4tt skydda dig b\u00E4ttre i solen."),
-            React.createElement("div", null,
-                React.createElement("input", { type: "text", ref: this.inputRef, onChange: this.props.handleChange(), value: this.props.code, onKeyPress: this.checkEnterPress }),
-                React.createElement("p", { style: { color: this.state.codeErrorTextColor } }, this.state.codeErrorText)),
-            React.createElement("button", { type: "button", onClick: this.continue }, "Starta Hudcancerkollen!")));
-    };
-    return Ingress;
-}(React.Component));
-exports.default = Ingress;
-
-
-/***/ }),
-
-/***/ "./level1.tsx":
-/*!********************!*\
-  !*** ./level1.tsx ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var Level1 = /** @class */ (function (_super) {
-    __extends(Level1, _super);
-    function Level1() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Level1.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("p", null, "Eftersom det h\u00E4r \u00E4r en testversion av Hudcancerkollen f\u00E5r du i den versionen ingen \u00E5terkoppling kring hur din sammanv\u00E4gda hudcancerrisk ser ut i j\u00E4mf\u00F6relse med andra, utan enbart vilka specifika riskfaktorer du har.")));
-        /* Detta visar olika beroende på risk
-        if (this.props.risk < 132)
-        {
-            return (
-                <div>
-                    <p>Jämfört med de flesta individer i Sverige är din risk att drabbas av melanom (hudcancer) förhållandevis låg.</p>
-                </div>
-            );
-        }
-        else if (this.props.risk < 660)
-        {
-            return (
-                <div>
-                    <p>Du har en måttlig risk att i framtiden drabbas av melanom (hudcancer), ungefär i nivå med genomsnittet i befolkningen.</p>
-                </div>
-            );
-        }
-        else if (this.props.risk < 1188)
-        {
-            return (
-                <div>
-                    <p>Jämfört med snittet har du en något förhöjd risk att i framtiden drabbas av melanom (hudcancer).</p>
-                </div>
-            );
-        }
-        else if (this.props.risk >= 1188)
-        {
-            return (
-                <div>
-                    <p>Jämfört med de flesta har du en ordentligt förhöjd risk att i framtiden drabbas av melanom (hudcancer).</p>
-                </div>
-            );
-        }
-        */
-    };
-    return Level1;
-}(React.Component));
-exports.default = Level1;
-
-
-/***/ }),
-
-/***/ "./level2.tsx":
-/*!********************!*\
-  !*** ./level2.tsx ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var Level2 = /** @class */ (function (_super) {
-    __extends(Level2, _super);
-    function Level2() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Level2.prototype.render = function () {
-        var answers1 = this.props.answers1;
-        var answersSepi = this.props.answersSepi;
-        var feedback = new Array();
-        var sepiScore = 0;
-        for (var i = 0; i < answersSepi.length; i++) {
-            sepiScore += answersSepi[i];
-        }
-        if (answers1[1] >= 60) {
-            feedback.push("att du är över 60 år, då risken för hudcancer ökar ju äldre man blir.");
-        }
-        if (answers1[3] < 3) {
-            feedback.push("att du har en hudtyp som skyddar dig mindre bra mot UV-strålningen.");
-        }
-        if (answers1[6] >= 1 && answers1[6] <= 3) {
-            feedback.push("att du redan haft melanom tidigare.");
-        }
-        if (answers1[7] == 2 || answers1[7] == 3) {
-            feedback.push("att du har ärftlighet för sjukdomen (en eller flera förstagradssläktingar som drabbats).");
-        }
-        if (answers1[8] >= 10) {
-            feedback.push("att du har ganska många leverfläckar.");
-        }
-        if (sepiScore >= 19) {
-            feedback.push("att du utsätter dig för rätt mycket sol och/eller inte gör så mycket för att skydda dig mot solen när den är stark.");
-        }
-        return (React.createElement("div", null,
-            React.createElement("p", null, "De faktorer som starkast bidrar till din hudcancerrisk \u00E4r:"),
-            React.createElement("ul", null, feedback.map(function (data, index) {
-                return (React.createElement("li", { key: "feedback" + index },
-                    React.createElement("p", null, data)));
-            }))));
-    };
-    return Level2;
-}(React.Component));
-exports.default = Level2;
-
-
-/***/ }),
-
-/***/ "./level3.tsx":
-/*!********************!*\
-  !*** ./level3.tsx ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var Level3 = /** @class */ (function (_super) {
-    __extends(Level3, _super);
-    function Level3() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Level3.prototype.render = function () {
-        var answersSepi = this.props.answersSepi;
-        var sepiQuestions = this.props.sepiQuestions;
-        //get max value in array
-        var max = 0;
-        var threshold = 2;
-        for (var i = 0; i < answersSepi.length; i++) {
-            if (Number(answersSepi[i]) > max)
-                max = Number(answersSepi[i]);
-        }
-        if (max < 3)
-            threshold = 1;
-        //print feedback for answers of max value
-        if (max < 2) {
+    Main.prototype.render = function () {
+        var correctLogin = this.state.correctLogin;
+        if (correctLogin) {
             return (React.createElement("div", null,
-                React.createElement("p", null, "\u00C5tg\u00E4rder du skulle kunna g\u00F6ra f\u00F6r att minska din hudcancerrisk \u00E4r att:"),
-                React.createElement("ul", null,
-                    React.createElement("li", null, "Forts\u00E4tta vara s\u00E5 f\u00F6rsiktig i solen som du redan \u00E4r."))));
+                React.createElement("h1", null, " Inloggad: "),
+                React.createElement("p", null, "Skriv in \u00F6nskad studiekod och ladda ner excelfil."),
+                React.createElement("input", { type: "text", ref: this.inputSurveyCodeRef, value: this.state.studiekod, onChange: this.handleSurveyCodeChanged() }),
+                React.createElement("button", { type: "button", onClick: this.getAnswersPressed }, "H\u00E4mta resultat f\u00F6r studiekod"),
+                React.createElement("p", { style: { color: this.state.getAnswersErrorTextColor } }, this.state.getAnswersErrorText)));
         }
         else {
             return (React.createElement("div", null,
-                React.createElement("p", null, "\u00C5tg\u00E4rder du skulle kunna g\u00F6ra f\u00F6r att minska din hudcancerrisk \u00E4r att:"),
-                React.createElement("ul", null, sepiQuestions.map(function (data, index) {
-                    if (Number(answersSepi[index]) > threshold)
-                        return (React.createElement("li", { key: "SEPIfeedback" + index },
-                            React.createElement("p", null, data.feedback)));
-                }))));
+                React.createElement("h1", null, " Logga in: "),
+                React.createElement("p", null, "Anv\u00E4ndarnamn:"),
+                React.createElement("input", { type: "text", ref: this.inputUsernameRef, onChange: this.handleUsernameChanged(), onKeyPress: this.checkLoginEnterPress }),
+                React.createElement("p", null, "L\u00F6senord:"),
+                React.createElement("input", { type: "password", ref: this.inputPasswordRef, onChange: this.handlePasswordChanged(), onKeyPress: this.checkLoginEnterPress }),
+                React.createElement("p", { style: { color: this.state.codeErrorTextColor } }, this.state.codeErrorText),
+                React.createElement("button", { type: "button", onClick: this.loginPressed }, "Logga in")));
         }
     };
-    return Level3;
+    return Main;
 }(React.Component));
-exports.default = Level3;
-
-
-/***/ }),
-
-/***/ "./level4.tsx":
-/*!********************!*\
-  !*** ./level4.tsx ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var Level4 = /** @class */ (function (_super) {
-    __extends(Level4, _super);
-    function Level4() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Level4.prototype.render = function () {
-        if (this.props.antal < 5) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "\u00C4ven om du har angett att du har ganska f\u00E5 leverfl\u00E4ckar kan det vara bra att \u00E4nd\u00E5 h\u00E5lla lite koll p\u00E5 dem du har, och kontakta din v\u00E5rdcentral om du uppt\u00E4cker en leverfl\u00E4ck som:"),
-                React.createElement(TheList, null)));
-        }
-        else if (this.props.antal < 10) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "Du b\u00F6r ocks\u00E5 regelbundet sj\u00E4lv h\u00E5lla koll p\u00E5 dina leverfl\u00E4ckar (eller be n\u00E5gon anh\u00F6rig kolla efter p\u00E5 kroppslokaler som \u00E4r sv\u00E5ra att sj\u00E4lv titta p\u00E5, s\u00E5som ryggen), och kontakta din v\u00E5rdcentral om du uppt\u00E4cker en leverfl\u00E4ck som:"),
-                React.createElement(TheList, null)));
-        }
-        else if (this.props.antal >= 10) {
-            return (React.createElement("div", null,
-                React.createElement("p", null, "Eftersom du har m\u00E5nga leverfl\u00E4ckar b\u00F6r du vara extra noga med att regelbundet se \u00F6ver dem (eller be n\u00E5gon anh\u00F6rig kolla efter p\u00E5 kroppslokaler som \u00E4r sv\u00E5ra att sj\u00E4lv titta p\u00E5, s\u00E5som ryggen), och kontakta din v\u00E5rdcentral om du uppt\u00E4cker en leverfl\u00E4ck som:"),
-                React.createElement(TheList, null)));
-        }
-    };
-    return Level4;
-}(React.Component));
-exports.default = Level4;
-var TheList = /** @class */ (function (_super) {
-    __extends(TheList, _super);
-    function TheList() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    TheList.prototype.render = function () {
-        return (React.createElement("ul", null,
-            React.createElement("li", null, "verkar v\u00E4xa och bli st\u00F6rre och st\u00F6rre. Det \u00E4r ovanligt att det leverfl\u00E4ckar som \u00E4r mindre \u00E4n 5 mm \u00E4r melanom."),
-            React.createElement("li", null, "har f\u00E5tt konstig form, t.ex. spretig, stj\u00E4rnformad eller v\u00E4ldigt oj\u00E4mn."),
-            React.createElement("li", null, "\u00E4r oregelbunden i f\u00E4rgen, t.ex. v\u00E4ldigt ljusbrun i ena delen och v\u00E4ldigt m\u00F6rk i den andra."),
-            React.createElement("li", null, "uppvisar flera olika f\u00E4rger, framf\u00F6rallt andra f\u00E4rger \u00E4n brunt (t.ex. r\u00F6tt, svart, bl\u00E5tt eller violett)."),
-            React.createElement("li", null, "blir ih\u00E5llande s\u00E5rig, \u00F6mmar eller bl\u00F6der utan att du rivit p\u00E5 den."),
-            React.createElement("li", null, "kliar intensivt eller ih\u00E5llande (vanliga leverfl\u00E4ckar som \u00E4r lite upph\u00F6jda kan ibland klia lite om de skaver mot kl\u00E4der, vilket i sig inte \u00E4r tecken p\u00E5 n\u00E5got farligt).")));
-    };
-    return TheList;
-}(React.Component));
+exports.Main = Main;
+ReactDOM.render(React.createElement(Main, null), document.getElementById('root'));
 
 
 /***/ }),
@@ -33085,370 +32430,7 @@ if (false) {} else {
 }
 
 
-/***/ }),
-
-/***/ "./question.tsx":
-/*!**********************!*\
-  !*** ./question.tsx ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var NumQuestion = /** @class */ (function (_super) {
-    __extends(NumQuestion, _super);
-    function NumQuestion(props) {
-        var _this = _super.call(this, props) || this;
-        _this.continue = function (e) {
-            e.preventDefault();
-            _this.props.nextStep();
-        };
-        _this.back = function (e) {
-            e.preventDefault();
-            _this.props.prevStep();
-        };
-        _this.checkEnterPress = function (e) {
-            if (e.key == 'Enter') {
-                if (_this.props.answer != "" && _this.props.answer != null && _this.props.answer !== undefined) {
-                    _this.continue(e);
-                }
-            }
-        };
-        _this.inputRef = React.createRef();
-        return _this;
-    }
-    NumQuestion.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("h2", null,
-                "Fr\u00E5ga ",
-                this.props.step),
-            React.createElement("div", { style: questionStyle },
-                React.createElement("p", null, this.props.object.text)),
-            React.createElement("div", { style: inputStyle },
-                React.createElement("input", { type: "number", ref: this.inputRef, onChange: this.props.handleChange(this.props.step - 1), value: this.props.answer, onKeyPress: this.checkEnterPress })),
-            React.createElement("button", { type: "button", onClick: this.back }, "Tillbaka"),
-            React.createElement("button", { type: "button", onClick: this.continue, disabled: this.props.answer == "" || this.props.answer == null }, "N\u00E4sta")));
-    };
-    return NumQuestion;
-}(React.Component));
-exports.default = NumQuestion;
-var inputStyle = {
-    minHeight: "200px",
-};
-var questionStyle = {
-    minHeight: "50px",
-};
-
-
-/***/ }),
-
-/***/ "./result.tsx":
-/*!********************!*\
-  !*** ./result.tsx ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var level1_1 = __webpack_require__(/*! ./level1 */ "./level1.tsx");
-var level2_1 = __webpack_require__(/*! ./level2 */ "./level2.tsx");
-var level3_1 = __webpack_require__(/*! ./level3 */ "./level3.tsx");
-var level4_1 = __webpack_require__(/*! ./level4 */ "./level4.tsx");
-var Result = /** @class */ (function (_super) {
-    __extends(Result, _super);
-    function Result(props) {
-        var _this = _super.call(this, props) || this;
-        _this.continue = function (e) {
-            e.preventDefault();
-            _this.props.nextStep();
-        };
-        _this.back = function (e) {
-            e.preventDefault();
-            _this.props.prevStep();
-        };
-        var risk = _this.calculateResult();
-        _this.setRisk(risk);
-        _this.state = { risk: risk };
-        return _this;
-    }
-    Result.prototype.calculateResult = function () {
-        var answers1 = this.props.answers1;
-        var answersSepi = this.props.answersSepi;
-        var sum = 0.0;
-        //Ålder 
-        //q1
-        var age = 0.0;
-        if (answers1[1] < 40) {
-            age = 1.0;
-        }
-        else if (answers1[1] > 60) {
-            age = 3.0;
-        }
-        else // 40 <= answers[0] <= 60
-         {
-            age = 2.0;
-        }
-        //kön
-        //q2
-        var gender = 1.0;
-        if (answers1[2] == 1) //om man
-            gender = 1.1;
-        //Hudtyp * hårfärg * fräknar (max 2.0)
-        //q3        q4          q5
-        var hairSkinFreck = 0.0;
-        var hair = 0.0;
-        var skin = 0.0;
-        var freck = 0.0;
-        switch (Number(answers1[3])) {
-            case 0:
-                skin = 1.6;
-                break;
-            case 1:
-                skin = 1.4;
-                break;
-            case 2:
-                skin = 1.2;
-                break;
-            case 3:
-                skin = 1.0;
-                break;
-            case 4:
-                skin = 1.0;
-                break;
-            case 5:
-                skin = 1.0;
-                break;
-        }
-        switch (Number(answers1[4])) {
-            case 0:
-                hair = 1.0;
-                break;
-            case 1:
-                hair = 1.0;
-                break;
-            case 2:
-                hair = 1.4;
-                break;
-            case 3:
-                hair = 1.7;
-                break;
-        }
-        switch (Number(answers1[5])) {
-            case 0:
-                freck = 1.0;
-                break;
-            case 1:
-                freck = 1.5;
-                break;
-        }
-        hairSkinFreck = hair * skin * freck;
-        if (hairSkinFreck > 2.0)
-            hairSkinFreck = 2.0;
-        //själv haft hudcancer
-        //q6
-        var selfCancer = 0.0;
-        switch (Number(answers1[6])) {
-            case 0:
-                selfCancer = 1.0;
-                break;
-            case 1:
-                selfCancer = 5.0;
-                break;
-            case 2:
-                selfCancer = 4.0;
-                break;
-            case 3:
-                selfCancer = 4.0;
-                break;
-            case 4:
-                selfCancer = 1.0;
-                break;
-        }
-        //släkt haft hudcancer
-        //q7
-        var famCancer = 0.0;
-        switch (Number(answers1[7])) {
-            case 0:
-                famCancer = 1.0;
-                break;
-            case 1:
-                famCancer = 2.0;
-                break;
-            case 2:
-                famCancer = 4.0;
-                break;
-            case 3:
-                famCancer = 1.0;
-                break;
-        }
-        //antal leverfläckar
-        //q8
-        var lever = 0.0;
-        if (answers1[8] < 5) {
-            lever = 1.0;
-        }
-        else if (answers1[8] >= 10) {
-            lever = 5.0;
-        }
-        else // 5 <= answers[8] < 10
-         {
-            lever = 3.0;
-        }
-        //SEPI score
-        var sepiScore = 0;
-        for (var i = 0; i < answersSepi.length; i++) {
-            sepiScore += answersSepi[i];
-        }
-        var sepi = 0.0;
-        if (sepiScore < 14) {
-            sepi = 1.0;
-        }
-        else if (sepiScore > 19) {
-            sepi = 2.0;
-        }
-        else // 14 < sepiScore < 19
-         {
-            sepi = 1.2;
-        }
-        //summera alltihop
-        sum = age * gender * hairSkinFreck * selfCancer * famCancer * lever * sepi;
-        //console.log("age= " + age);
-        //console.log("gender= " + gender);
-        //console.log("hairSkinFreck= " + hairSkinFreck);
-        //console.log("selfCancer= " + selfCancer);
-        //console.log("famCancer= " + famCancer);
-        //console.log("lever= " + lever);
-        //console.log("sepi= " + sepi);
-        //console.log("sum= " + sum);
-        return sum;
-    };
-    Result.prototype.setRisk = function (risk) {
-        this.props.setRisk(risk);
-    };
-    Result.prototype.render = function () {
-        var answers1 = this.props.answers1;
-        var answersSepi = this.props.answersSepi;
-        var risk = this.state.risk;
-        return (React.createElement("div", null,
-            React.createElement("h2", null, "Resultat:"),
-            React.createElement(level1_1.default, { risk: risk }),
-            React.createElement(level2_1.default, { risk: risk, answers1: answers1, answersSepi: answersSepi }),
-            React.createElement(level3_1.default, { risk: risk, sepiQuestions: this.props.sepiQuestions, answersSepi: answersSepi }),
-            React.createElement(level4_1.default, { antal: answers1[8] }),
-            React.createElement("button", { type: "button", onClick: this.continue }, "Forts\u00E4tt")));
-    };
-    return Result;
-}(React.Component));
-exports.default = Result;
-
-
-/***/ }),
-
-/***/ "./textQuestion.tsx":
-/*!**************************!*\
-  !*** ./textQuestion.tsx ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var TextQuestion = /** @class */ (function (_super) {
-    __extends(TextQuestion, _super);
-    function TextQuestion(props) {
-        var _this = _super.call(this, props) || this;
-        _this.continue = function (e) {
-            e.preventDefault();
-            _this.props.nextStep();
-        };
-        _this.back = function (e) {
-            e.preventDefault();
-            _this.props.prevStep();
-        };
-        _this.checkEnterPress = function (e) {
-            if (e.key == 'Enter') {
-                if (_this.props.answer != "" && _this.props.answer != null && _this.props.answer !== undefined) {
-                    _this.continue(e);
-                }
-            }
-        };
-        _this.inputRef = React.createRef();
-        return _this;
-    }
-    TextQuestion.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("h2", null,
-                "Fr\u00E5ga ",
-                this.props.step),
-            React.createElement("div", { style: questionStyle },
-                React.createElement("p", null, this.props.object.text)),
-            React.createElement("div", { style: inputStyle },
-                React.createElement("input", { type: "text", ref: this.inputRef, onChange: this.props.handleChange(this.props.step - 1), value: this.props.answer, onKeyPress: this.checkEnterPress })),
-            React.createElement("button", { type: "button", onClick: this.back }, "Tillbaka"),
-            React.createElement("button", { type: "button", onClick: this.continue, disabled: this.props.answer == "" || this.props.answer == null }, "N\u00E4sta")));
-    };
-    return TextQuestion;
-}(React.Component));
-exports.default = TextQuestion;
-var inputStyle = {
-    minHeight: "200px",
-};
-var questionStyle = {
-    minHeight: "50px",
-};
-
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app-bundle.js.map
+//# sourceMappingURL=admin-bundle.js.map

@@ -24,7 +24,7 @@ export default class Level4 extends React.Component {
                 </div>
             );
         }
-        else if (this.props.antal > 10) {
+        else if (this.props.antal >= 10) {
             return (
                 <div>
                     <p>Eftersom du har många leverfläckar bör du vara extra noga med att regelbundet se över dem (eller be någon anhörig kolla efter på kroppslokaler som är svåra att själv titta på, såsom ryggen), och kontakta din vårdcentral om du upptäcker en leverfläck som:</p>
