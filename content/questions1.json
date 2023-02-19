@@ -72,5 +72,13 @@
   {
     "text": "Titta efter på dina båda underarmar och räkna hur många leverfläckar (oavsett storlek) du har på dem tillsammans",
     "answer_type": "number_input"
+  },
+  {
+    "text": "Om du tänker på hur du ser ut på hela kroppen, har du fler än två leverfläckar som är större än 5 mm?",
+    "answer_type": "alternatives",
+    "alternatives": [
+      "Nej, jag har inga eller färre än tre leverfläckar som är större än 5 mm",
+      "Ja, jag har minst tre leverfläckar som är större än 5 mm"
+    ]
   }
 ]
