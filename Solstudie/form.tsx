@@ -151,6 +151,7 @@ export default class Form extends React.Component {
                 q6: this.state.answers1[6],
                 q7: this.state.answers1[7],
                 q8: this.state.answers1[8],
+                q9: this.state.answers1[9],
                 sepi1: this.state.answersSepi[0],
                 sepi2: this.state.answersSepi[1],
                 sepi3: this.state.answersSepi[2],
