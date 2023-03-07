@@ -32,6 +32,8 @@ export default class Form extends React.Component {
             kontakt: "",
             test: 0
         };
+
+        this.state.answersSus.fill(-1);
     }
 
     //move to next question/page of the form by increasing the step variable
@@ -40,8 +42,8 @@ export default class Form extends React.Component {
         const { surveyCode } = this.state;
 
         // hantera sol2-fallet
-        if (surveyCode == "sol2" && step == (this.props.questions1.length + this.props.sepiQuestions.length + this.props.susQuestions.length + 1)) {
-            this.setState({ step: step + 2 });
+        if (surveyCode == "sol2" && step == (this.props.questions1.length + this.props.sepiQuestions.length + 1)) {
+            this.setState({ step: step + this.props.susQuestions.length + 2 });
             this.callApi();
             return;
         }

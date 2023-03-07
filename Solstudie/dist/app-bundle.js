@@ -329,8 +329,8 @@ var Form = /** @class */ (function (_super) {
             var step = _this.state.step;
             var surveyCode = _this.state.surveyCode;
             // hantera sol2-fallet
-            if (surveyCode == "sol2" && step == (_this.props.questions1.length + _this.props.sepiQuestions.length + _this.props.susQuestions.length + 1)) {
-                _this.setState({ step: step + 2 });
+            if (surveyCode == "sol2" && step == (_this.props.questions1.length + _this.props.sepiQuestions.length + 1)) {
+                _this.setState({ step: step + _this.props.susQuestions.length + 2 });
                 _this.callApi();
                 return;
             }
@@ -469,6 +469,7 @@ var Form = /** @class */ (function (_super) {
             kontakt: "",
             test: 0
         };
+        _this.state.answersSus.fill(-1);
         return _this;
     }
     Form.prototype.render = function () {
